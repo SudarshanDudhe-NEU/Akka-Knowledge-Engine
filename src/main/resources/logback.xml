@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{ISO8601} %-5level %logger{36} %X{akkaSource} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/akka-cluster.log</file>
+        <encoder>
+            <pattern>%date{ISO8601} %-5level %logger{36} %X{akkaSource} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Akka cluster specific logging -->
+    <logger name="akka.cluster" level="INFO" />
+    <logger name="akka.remote" level="INFO" />
+    <logger name="com.akka.cluster.demo" level="DEBUG" />
+    
+    <!-- Reduce noise from some verbose loggers -->
+    <logger name="akka.actor.LocalActorRefProvider" level="WARN" />
+    <logger name="akka.serialization.jackson" level="WARN" />
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
