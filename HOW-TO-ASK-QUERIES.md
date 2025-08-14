@@ -1,57 +1,40 @@
-# 🤖 How to Ask Queries - Enhanced Akka Cluster AI System
+# 🤖 How to Ask Queries
 
-## 🚀 Quick Start Guide
-
-Your Akka Cluster system now supports structured JSON responses with confidence scoring, just like your Python Perplexity API example!
-
----
-
-## 📋 **Method 1: Interactive Real Message Flow Demo**
-
-### Start the Complete Cluster:
+## 🚀 Quick Start
 
 ```bash
-# Terminal 1: Start the full cluster demo
 ./start-cluster.sh
-
-# Or manually start individual nodes:
-# Terminal 1: Seed Node
-mvn exec:java -Dexec.mainClass=com.akka.cluster.demo.ClusterApp -Dexec.args="seed"
-
-# Terminal 2: LLM Node
-mvn exec:java -Dexec.mainClass=com.akka.cluster.demo.ClusterApp -Dexec.args="llm 2555"
-
-# Terminal 3: Query Handler
-mvn exec:java -Dexec.mainClass=com.akka.cluster.demo.ClusterApp -Dexec.args="query-handler 2556"
-
-# Terminal 4: Router
-mvn exec:java -Dexec.mainClass=com.akka.cluster.demo.ClusterApp -Dexec.args="router 2557"
-
-# Terminal 5: Interactive Client
-mvn exec:java -Dexec.mainClass=com.akka.cluster.demo.ClusterApp -Dexec.args="client 2558"
+./start-client.sh
 ```
 
-### Ask Interactive Queries:
+## 📋 Example Queries
 
-```bash
-# The client will prompt you to enter queries
-# Example queries to try:
+**AI/ML Topics**:
 
-💰 STARTUP FUNDING:
-"Find the top 3 trending AI startups with recent funding"
+- "What is machine learning?"
+- "Explain neural networks"
 
-🔧 TECHNICAL:
-"How does Akka cluster handle network partitions?"
+**Technical**:
 
-🤖 AI/ML:
-"What is machine learning and how does it work?"
+- "How does Akka cluster work?"
+- "What is actor model?"
 
-📊 DATA SCIENCE:
-"Explain the difference between batch and stream processing"
+**Startup/Business**:
+
+- "Find trending AI startups"
+- "Explain venture capital"
+
+## 🔄 What You'll See
+
+- **TELL** patterns for logging
+- **ASK** patterns for LLM queries
+- **FORWARD** patterns for routing
+- JSON responses with confidence scores
 
 🌐 DISTRIBUTED SYSTEMS:
 "What are the best practices for microservices architecture?"
-```
+
+````
 
 ---
 
@@ -61,7 +44,7 @@ mvn exec:java -Dexec.mainClass=com.akka.cluster.demo.ClusterApp -Dexec.args="cli
 
 ```bash
 mvn exec:java -Dexec.mainClass=com.akka.cluster.demo.RealMessageFlowDemo
-```
+````
 
 This will:
 
