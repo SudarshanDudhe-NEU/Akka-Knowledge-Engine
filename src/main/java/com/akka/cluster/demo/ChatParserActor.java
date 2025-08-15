@@ -110,9 +110,10 @@ public class ChatParserActor extends AbstractBehavior<ChatParserActor.Command> {
     );
     
     // New pattern for 12-hour format with AM/PM: [7/1/25, 11:31:28 PM] Name: message
-    // Note: Handles Unicode whitespace including thin spaces (U+202F)
+    // Updated to handle special characters, Unicode, and various name formats
     private static final Pattern WHATSAPP_PATTERN_4 = Pattern.compile(
-        "^\\[(\\d{1,2}/\\d{1,2}/\\d{2,4}),\\s+(\\d{1,2}:\\d{2}:\\d{2})\\s+(AM|PM)\\]\\s+([^:]+):\\s(.*)$"
+        "^\\[(\\d{1,2}/\\d{1,2}/\\d{2,4}),\\s+(\\d{1,2}:\\d{2}:\\d{2})\\s+(AM|PM)\\]\\s+([^:]+?):\\s*(.*)$",
+        Pattern.UNICODE_CHARACTER_CLASS
     );
 
     private ChatParserActor(ActorContext<Command> context) {
@@ -201,7 +202,25 @@ public class ChatParserActor extends AbstractBehavior<ChatParserActor.Command> {
     }
 
     private ChatMessage parseMessage(String line, int messageCounter) {
+        // Debug: Print first few characters in hex to see Unicode issues
+        if (messageCounter < 3) {
+            System.out.printf("🔍 [DEBUG] Line %d: %s%n", messageCounter, 
+                line.substring(0, Math.min(50, line.length())));
+        }
+        
         // Try different WhatsApp export patterns
+        
+        // Pattern 4: "[7/1/25, 11:31:28 PM] Name: message" (try this first as it's most likely)
+        Matcher matcher4 = WHATSAPP_PATTERN_4.matcher(line);
+        if (matcher4.matches()) {
+            return createChatMessage(
+                matcher4.group(1), // date
+                matcher4.group(2) + " " + matcher4.group(3), // time + AM/PM
+                matcher4.group(4), // sender
+                matcher4.group(5), // content
+                messageCounter
+            );
+        }
         
         // Pattern 1: "12/31/2023, 10:30 - John: Hello there"
         Matcher matcher1 = WHATSAPP_PATTERN_1.matcher(line);
@@ -239,16 +258,9 @@ public class ChatParserActor extends AbstractBehavior<ChatParserActor.Command> {
             );
         }
         
-        // Pattern 4: "[7/1/25, 11:31:28 PM] Name: message"
-        Matcher matcher4 = WHATSAPP_PATTERN_4.matcher(line);
-        if (matcher4.matches()) {
-            return createChatMessage(
-                matcher4.group(1), // date
-                matcher4.group(2) + " " + matcher4.group(3), // time + AM/PM
-                matcher4.group(4), // sender
-                matcher4.group(5), // content
-                messageCounter
-            );
+        // Debug: Show why line didn't match
+        if (messageCounter < 5) {
+            System.out.printf("❌ [DEBUG] No pattern matched for line %d%n", messageCounter);
         }
         
         // If no pattern matches, it might be a continuation of previous message
@@ -261,10 +273,19 @@ public class ChatParserActor extends AbstractBehavior<ChatParserActor.Command> {
             String timestamp = dateStr + " " + timeStr;
             String messageId = "msg_" + messageCounter + "_" + System.currentTimeMillis();
             
+            // Clean up sender name and content by removing invisible Unicode characters
+            String cleanSender = sender.trim().replaceAll("\\p{C}", ""); // Remove control characters
+            String cleanContent = content.trim().replaceAll("^\\p{C}+", ""); // Remove leading control characters
+            
+            // Skip system messages that are mostly invisible characters
+            if (cleanContent.isEmpty() || cleanContent.length() < 3) {
+                return null;
+            }
+            
             // Parse the date-time for search functionality
             LocalDateTime dateTime = parseDateTime(dateStr, timeStr);
             
-            return new ChatMessage(timestamp, sender.trim(), content.trim(), messageId, dateTime);
+            return new ChatMessage(timestamp, cleanSender, cleanContent, messageId, dateTime);
             
         } catch (Exception e) {
             System.out.println("⚠️ [PARSER] Could not parse message: " + e.getMessage());
@@ -283,17 +304,29 @@ public class ChatParserActor extends AbstractBehavior<ChatParserActor.Command> {
                 dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
             } else if (timeStr.contains("AM") || timeStr.contains("PM")) {
                 // Format: 7/1/25 11:31:28 PM (2-digit year with AM/PM)
-                dateFormatter = DateTimeFormatter.ofPattern("M/d/yy h:mm:ss a");
+                // Handle both single and double digit months/days
+                if (dateStr.matches("\\d{1,2}/\\d{1,2}/\\d{2}")) {
+                    dateFormatter = DateTimeFormatter.ofPattern("M/d/yy h:mm:ss a");
+                } else {
+                    dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy h:mm:ss a");
+                }
+            } else if (dateStr.matches("\\d{1,2}/\\d{1,2}/\\d{2}")) {
+                // Format: 7/1/25 10:30 (2-digit year, 24-hour)
+                dateFormatter = DateTimeFormatter.ofPattern("M/d/yy HH:mm");
+            } else if (timeStr.length() > 5) {
+                // Format: 12/31/2023 10:30:45 (with seconds)
+                dateFormatter = DateTimeFormatter.ofPattern("M/d/yyyy HH:mm:ss");
             } else {
                 // Format: 12/31/2023 10:30
-                dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
+                dateFormatter = DateTimeFormatter.ofPattern("M/d/yyyy HH:mm");
             }
             
             return LocalDateTime.parse(fullTimestamp, dateFormatter);
             
         } catch (Exception e) {
             // If parsing fails, return current time as fallback
-            System.out.println("⚠️ [PARSER] Could not parse datetime: " + dateStr + " " + timeStr);
+            // Use context logger instead of System.out for cleaner output
+            getContext().getLog().debug("Could not parse datetime: {} {}", dateStr, timeStr);
             return LocalDateTime.now();
         }
     }

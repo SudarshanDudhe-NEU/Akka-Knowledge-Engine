@@ -14,3 +14,25 @@
 [2025-08-14 20:16:09.020] [current] [ANSWER_PROVIDED] Question answered: Name the people in the group
 [2025-08-14 20:16:49.881] [session_ff170fc1] [QUESTION_ASKED] User question: Who mentioned security deposit?
 [2025-08-14 20:16:54.097] [current] [ANSWER_PROVIDED] Question answered: Who mentioned security deposit?
+[2025-08-14 20:20:47.189] [session_20654dac] [UPLOAD_STARTED] Chat file upload initiated: ./sample_whatsapp_chat.txt
+[2025-08-14 20:20:47.196] [session_20654dac] [UPLOAD_COMPLETED] Chat indexed successfully: 0 chunks
+[2025-08-14 20:21:40.243] [session_20654dac] [QUESTION_ASKED] User question: What arrangements were made for August?
+[2025-08-14 20:21:43.000] [current] [ANSWER_PROVIDED] Question answered: What arrangements were made for August?
+[2025-08-14 20:21:56.495] [session_20654dac] [QUESTION_ASKED] User question: What arrangements were made for August?
+[2025-08-14 20:22:00.113] [current] [ANSWER_PROVIDED] Question answered: What arrangements were made for August?
+[2025-08-14 20:22:15.354] [session_20654dac] [QUESTION_ASKED] User question: Who mentioned security deposit?
+[2025-08-14 20:22:18.349] [current] [ANSWER_PROVIDED] Question answered: Who mentioned security deposit?
+[2025-08-14 20:23:13.100] [session_20654dac] [UPLOAD_STARTED] Chat file upload initiated: ./sample_whatsapp_chat.txt
+[2025-08-14 20:23:13.104] [session_20654dac] [UPLOAD_COMPLETED] Chat indexed successfully: 0 chunks
+[2025-08-14 20:23:25.755] [session_20654dac] [QUESTION_ASKED] User question: Who mentioned security deposit?
+[2025-08-14 20:23:28.327] [current] [ANSWER_PROVIDED] Question answered: Who mentioned security deposit?
+[2025-08-14 20:28:15.277] [session_8f2fceb3] [UPLOAD_STARTED] Chat file upload initiated: ./sample_whatsapp_chat.txt
+[2025-08-14 20:28:15.306] [session_8f2fceb3] [UPLOAD_COMPLETED] Chat indexed successfully: 67 chunks
+[2025-08-14 20:28:25.359] [session_8f2fceb3] [UPLOAD_STARTED] Chat file upload initiated: ./sample_whatsapp_chat.txt
+[2025-08-14 20:28:25.392] [session_8f2fceb3] [UPLOAD_COMPLETED] Chat indexed successfully: 67 chunks
+[2025-08-14 20:28:49.526] [session_8f2fceb3] [UPLOAD_STARTED] Chat file upload initiated: ./sample_whatsapp_chat.txt
+[2025-08-14 20:28:49.556] [session_8f2fceb3] [UPLOAD_COMPLETED] Chat indexed successfully: 67 chunks
+[2025-08-14 20:28:55.937] [session_8f2fceb3] [QUESTION_ASKED] User question: When did they discuss the apartment?
+[2025-08-14 20:28:59.484] [current] [ANSWER_PROVIDED] Question answered: When did they discuss the apartment?
+[2025-08-14 20:29:25.960] [session_8f2fceb3] [QUESTION_ASKED] User question: What did Ruchik say about payments?
+[2025-08-14 20:29:28.230] [current] [ANSWER_PROVIDED] Question answered: What did Ruchik say about payments?

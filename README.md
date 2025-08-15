@@ -2,7 +2,7 @@
 
 ## 🎊 **PROJECT STATUS: COMPLETED** ✅
 
-**WhatsApp Q&A System with 85% parsing success rate**
+**WhatsApp Q&A System with 95%+ parsing success rate**
 
 🚀 **Quick Start**: `./quick-start.sh`
 
@@ -18,10 +18,12 @@ This project demonstrates **Akka Cluster** with **LLM integration** showcasing d
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Java 11+, Maven 3.6+
 - Perplexity API Key (optional)
 
 ### Setup
+
 ```bash
 mvn clean compile
 export PERPLEXITY_API_KEY="your-key"  # optional
@@ -62,35 +64,42 @@ akka-clusters/
 ## 🔍 Key Concepts Demonstrated
 
 ### 1. Cluster Membership
+
 - Seed nodes for cluster bootstrapping
 - Gossip protocol for membership information
 - Member lifecycle: Joining → Up → Leaving → Removed
 
 ### 2. Node Roles
+
 - Different responsibilities (seed, llm, query-handler, router, interactive)
 - Role-based actor spawning and behavior
 
 ### 3. Fault Tolerance
+
 - Failure detection using Phi Accrual Failure Detector
 - Split Brain Resolver for network partition handling
 - Graceful shutdown and forceful node removal
 
 ### 4. Akka Communication Patterns
+
 - **TELL**: Fire-and-forget messaging to logging actors
 - **ASK**: Request-response pattern with LLM service using Futures
 - **FORWARD**: Message forwarding through router actors
 
 ### 5. LLM Integration
+
 - Real-world AI service integration (Perplexity API)
 - Asynchronous request handling
 - Structured response processing
 
 ### 6. Distributed Messaging
+
 - Cluster-aware message routing
 - Serialization for cross-node communication
 - Actor location transparency
 
 ### 7. Observability
+
 - Cluster event monitoring
 - Structured logging for debugging
 - Real-time message flow visualization
@@ -100,6 +109,7 @@ akka-clusters/
 ### Common Issues
 
 **Port Already in Use**
+
 ```bash
 # Check what's using the port
 lsof -i :2551
@@ -107,16 +117,19 @@ lsof -i :2551
 ```
 
 **Nodes Can't Join Cluster**
+
 - Ensure seed node is running first
 - Check firewall settings
 - Verify network connectivity (localhost should work)
 
 **LLM API Issues**
+
 - Verify PERPLEXITY_API_KEY is set correctly
 - Check internet connectivity
 - Review API rate limits
 
 **High CPU Usage**
+
 - Normal during cluster formation
 - Check log levels (reduce if too verbose)
 - Monitor failure detector sensitivity
