@@ -34,7 +34,7 @@ start_system() {
         echo ""
         echo "🚀 Starting Enhanced WhatsApp Q&A System..."
         echo "================================================="
-        mvn exec:java -Dexec.mainClass="com.akka.cluster.demo.ClusterApp" -Dexec.args="whatsapp-qa 2558"
+        mvn exec:java -Dexec.mainClass="com.akka.cluster.app.ClusterApp" -Dexec.args="whatsapp-qa 2558"
     else
         echo "❌ Build failed. Please check the error messages above."
     fi
@@ -82,7 +82,7 @@ show_usage() {
     echo ""
     echo "🔧 Manual Start:"
     echo "  mvn clean compile"
-    echo "  mvn exec:java -Dexec.mainClass="com.akka.cluster.demo.ClusterApp" -Dexec.args="whatsapp-qa 2558""
+    echo "  mvn exec:java -Dexec.mainClass="com.akka.cluster.app.ClusterApp" -Dexec.args="whatsapp-qa 2558""
     echo ""
     echo "💬 In the system:"
     echo "  upload /path/to/your/whatsapp_chat.txt"

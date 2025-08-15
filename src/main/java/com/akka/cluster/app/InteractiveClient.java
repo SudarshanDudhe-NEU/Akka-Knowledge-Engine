@@ -1,4 +1,4 @@
-package com.akka.cluster.demo;
+package com.akka.cluster.app;
 
 import akka.actor.typed.ActorRef;
 import akka.actor.typed.ActorSystem;
@@ -233,7 +233,7 @@ public class InteractiveClient {
                 provider = "cluster"
                 
                 serialization-bindings {
-                  "com.akka.cluster.demo.CborSerializable" = jackson-cbor
+                  "com.akka.cluster.app.CborSerializable" = jackson-cbor
                 }
               }
               

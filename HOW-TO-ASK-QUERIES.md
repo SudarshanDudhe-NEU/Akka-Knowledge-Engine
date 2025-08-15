@@ -43,7 +43,7 @@
 ### Start the Demo:
 
 ```bash
-mvn exec:java -Dexec.mainClass=com.akka.cluster.demo.RealMessageFlowDemo
+mvn exec:java -Dexec.mainClass=com.akka.cluster.app.RealMessageFlowDemo
 ````
 
 This will:

@@ -1,4 +1,4 @@
-package com.akka.cluster.demo;
+package com.akka.cluster.app;
 
 /**
  * Marker interface for JSON serializable messages.

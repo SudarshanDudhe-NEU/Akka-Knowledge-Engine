@@ -1,4 +1,4 @@
-package com.akka.cluster.demo.swing;
+package com.akka.cluster.app.swing;
 
 import akka.actor.typed.ActorRef;
 import akka.actor.typed.ActorSystem;
@@ -7,7 +7,7 @@ import akka.actor.typed.javadsl.Behaviors;
 import akka.actor.typed.javadsl.AskPattern;
 import akka.cluster.typed.Cluster;
 import akka.cluster.typed.Join;
-import com.akka.cluster.demo.SessionManagerActor;
+import com.akka.cluster.app.SessionManagerActor;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 import akka.util.Timeout;

@@ -1,6 +1,6 @@
-package com.akka.cluster.demo.swing;
+package com.akka.cluster.app.swing;
 
-import com.akka.cluster.demo.*;
+import com.akka.cluster.app.*;
 import akka.actor.typed.ActorSystem;
 import akka.actor.typed.javadsl.AskPattern;
 import akka.util.Timeout;

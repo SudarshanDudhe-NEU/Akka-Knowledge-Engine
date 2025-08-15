@@ -126,7 +126,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>com.akka.cluster.demo.ClusterApp</mainClass>
+                    <mainClass>com.akka.cluster.app.ClusterApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>

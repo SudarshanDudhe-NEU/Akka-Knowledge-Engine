@@ -1258,3 +1258,11 @@ Please answer the current question considering the conversation context above. I
 [2025-08-14 22:17:22.856] [current] [ANSWER_PROVIDED] Question answered: Show me messages about Evesource
 [2025-08-14 22:17:42.808] [41c46104-974c-4288-baa3-946a3066f34a] [QUESTION_ASKED] User question: Who mentioned Security deposit
 [2025-08-14 22:17:46.191] [current] [ANSWER_PROVIDED] Question answered: Who mentioned Security deposit
+[2025-08-14 22:40:10.018] [c6f8b104-bb7a-4c11-9620-937fe0f42555] [UPLOAD_STARTED] Chat file upload initiated: /Users/sudarshan/Downloads/_chat 8.txt
+[2025-08-14 22:40:10.065] [c6f8b104-bb7a-4c11-9620-937fe0f42555] [UPLOAD_COMPLETED] Chat indexed successfully: 88 chunks
+[2025-08-14 22:40:41.725] [c6f8b104-bb7a-4c11-9620-937fe0f42555] [QUESTION_ASKED] User question: Who mentioned security deposit?
+[2025-08-14 22:40:46.688] [current] [ANSWER_PROVIDED] Question answered: Who mentioned security deposit?
+[2025-08-14 22:41:16.684] [c6f8b104-bb7a-4c11-9620-937fe0f42555] [QUESTION_ASKED] User question: When did they discuss the apartment?
+[2025-08-14 22:41:20.826] [current] [ANSWER_PROVIDED] Question answered: When did they discuss the apartment?
+[2025-08-14 22:43:18.704] [c6f8b104-bb7a-4c11-9620-937fe0f42555] [QUESTION_ASKED] User question: What is happening with the Electricity bill?
+[2025-08-14 22:43:22.350] [current] [ANSWER_PROVIDED] Question answered: What is happening with the Electricity bill?

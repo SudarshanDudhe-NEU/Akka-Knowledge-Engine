@@ -26,7 +26,7 @@ if [ $? -eq 0 ]; then
     
     # Run the Swing GUI using direct classpath
     echo "📱 Loading GUI application..."
-    java -cp "target/classes:$(mvn dependency:build-classpath -q -Dmdep.outputFile=/dev/stdout)" com.akka.cluster.demo.swing.KnowledgeEngineGUI
+    java -cp "target/classes:$(mvn dependency:build-classpath -q -Dmdep.outputFile=/dev/stdout)" com.akka.cluster.app.swing.KnowledgeEngineGUI
 else
     echo "❌ Compilation failed. Please check for errors."
     exit 1

@@ -17,7 +17,7 @@
     <!-- Akka cluster specific logging -->
     <logger name="akka.cluster" level="INFO" />
     <logger name="akka.remote" level="INFO" />
-    <logger name="com.akka.cluster.demo" level="DEBUG" />
+    <logger name="com.akka.cluster.app" level="DEBUG" />
     
     <!-- Reduce noise from some verbose loggers -->
     <logger name="akka.actor.LocalActorRefProvider" level="WARN" />

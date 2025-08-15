@@ -1,4 +1,4 @@
-package com.akka.cluster.demo.swing;
+package com.akka.cluster.app.swing;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

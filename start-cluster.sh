@@ -31,25 +31,25 @@ echo ""
 
 # Start seed node (port 2551)
 echo "🌱 Starting seed node on port 2551..."
-mvn exec:java -Dexec.mainClass="com.akka.cluster.demo.ClusterApp" -Dexec.args="seed" -q &
+mvn exec:java -Dexec.mainClass="com.akka.cluster.app.ClusterApp" -Dexec.args="seed" -q &
 SEED_PID=$!
 sleep 3
 
 # Start LLM node (port 2555)
 echo "🤖 Starting LLM node on port 2555..."
-mvn exec:java -Dexec.mainClass="com.akka.cluster.demo.ClusterApp" -Dexec.args="llm 2555" -q &
+mvn exec:java -Dexec.mainClass="com.akka.cluster.app.ClusterApp" -Dexec.args="llm 2555" -q &
 LLM_PID=$!
 sleep 2
 
 # Start query handler node (port 2556)
 echo "� Starting query handler node on port 2556..."
-mvn exec:java -Dexec.mainClass="com.akka.cluster.demo.ClusterApp" -Dexec.args="query-handler 2556" -q &
+mvn exec:java -Dexec.mainClass="com.akka.cluster.app.ClusterApp" -Dexec.args="query-handler 2556" -q &
 HANDLER_PID=$!
 sleep 2
 
 # Start router node (port 2557)
 echo "🌐 Starting router node on port 2557..."
-mvn exec:java -Dexec.mainClass="com.akka.cluster.demo.ClusterApp" -Dexec.args="router 2557" -q &
+mvn exec:java -Dexec.mainClass="com.akka.cluster.app.ClusterApp" -Dexec.args="router 2557" -q &
 ROUTER_PID=$!
 
 echo ""
