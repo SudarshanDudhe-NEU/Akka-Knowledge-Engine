@@ -1266,3 +1266,19 @@ Please answer the current question considering the conversation context above. I
 [2025-08-14 22:41:20.826] [current] [ANSWER_PROVIDED] Question answered: When did they discuss the apartment?
 [2025-08-14 22:43:18.704] [c6f8b104-bb7a-4c11-9620-937fe0f42555] [QUESTION_ASKED] User question: What is happening with the Electricity bill?
 [2025-08-14 22:43:22.350] [current] [ANSWER_PROVIDED] Question answered: What is happening with the Electricity bill?
+[2025-08-15 13:41:23.489] [session_55e02f2e] [UPLOAD_STARTED] Chat file upload initiated: /Users/sudarshan/Desktop/sample_whatsapp_chat.txt
+[2025-08-15 13:41:23.593] [session_55e02f2e] [UPLOAD_COMPLETED] Chat indexed successfully: 67 chunks
+[2025-08-15 13:41:46.326] [session_55e02f2e] [QUESTION_ASKED] User question: What did ruchik say about the payment?
+[2025-08-15 13:41:50.216] [current] [ANSWER_PROVIDED] Question answered: What did ruchik say about the payment?
+[2025-08-15 14:15:49.304] [session_399f10db] [UPLOAD_STARTED] Chat file upload initiated: ./sample_whatsapp_chat.txt
+[2025-08-15 14:15:49.332] [session_399f10db] [UPLOAD_COMPLETED] Chat indexed successfully: 67 chunks
+[2025-08-15 14:15:59.385] [session_399f10db] [QUESTION_ASKED] User question: Who is Pritam and what was the concern about his visa?
+[2025-08-15 14:16:06.134] [current] [ANSWER_PROVIDED] Question answered: Who is Pritam and what was the concern about his visa?
+[2025-08-15 14:16:39.337] [session_399f10db] [QUESTION_ASKED] User question: What payment arrangements were discussed for Pritam?
+[2025-08-15 14:16:43.196] [current] [ANSWER_PROVIDED] Question answered: What payment arrangements were discussed for Pritam?
+[2025-08-15 14:17:04.453] [session_399f10db] [QUESTION_ASKED] User question: What common items did Piyush order and from where?
+[2025-08-15 14:17:08.975] [current] [ANSWER_PROVIDED] Question answered: What common items did Piyush order and from where?
+[2025-08-15 14:17:27.445] [session_399f10db] [QUESTION_ASKED] User question: Who set up the electricity account and what company?
+[2025-08-15 14:17:31.401] [current] [ANSWER_PROVIDED] Question answered: Who set up the electricity account and what company?
+[2025-08-15 14:17:51.471] [session_399f10db] [QUESTION_ASKED] User question: What temporary arrangement did Ruchik and Sudarshan make?
+[2025-08-15 14:17:54.387] [current] [ANSWER_PROVIDED] Question answered: What temporary arrangement did Ruchik and Sudarshan make?
