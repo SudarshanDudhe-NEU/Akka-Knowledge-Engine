@@ -1,0 +1,16 @@
+[2025-08-14 20:10:07.975] [session_d315412c] [UPLOAD_STARTED] Chat file upload initiated: /Users/sudarshan/courses/Intro AI Agent Infrastructure/akka-clusters/sample_whatsapp_chat.txt
+[2025-08-14 20:10:08.031] [session_d315412c] [UPLOAD_COMPLETED] Chat indexed successfully: 67 chunks
+[2025-08-14 20:10:37.904] [session_d315412c] [QUESTION_ASKED] User question: What temporary arrangement did Ruchik and Sudarshan make?
+[2025-08-14 20:10:43.324] [current] [ANSWER_PROVIDED] Question answered: What temporary arrangement did Ruchik and Sudarshan make?
+[2025-08-14 20:13:48.077] [session_c5c8d8c6] [UPLOAD_STARTED] Chat file upload initiated: /Users/sudarshan/courses/Intro AI Agent Infrastructure/Akka-Knowledge-Engine/sample_whatsapp_chat.txt
+[2025-08-14 20:13:48.107] [session_c5c8d8c6] [UPLOAD_COMPLETED] Chat indexed successfully: 67 chunks
+[2025-08-14 20:13:53.107] [session_c5c8d8c6] [UPLOAD_STARTED] Chat file upload initiated: /Users/sudarshan/courses/Intro AI Agent Infrastructure/Akka-Knowledge-Engine/sample_whatsapp_chat.txt
+[2025-08-14 20:13:53.124] [session_c5c8d8c6] [UPLOAD_COMPLETED] Chat indexed successfully: 67 chunks
+[2025-08-14 20:14:44.817] [session_ff170fc1] [UPLOAD_STARTED] Chat file upload initiated: ./sample_whatsapp_chat.txt
+[2025-08-14 20:14:44.850] [session_ff170fc1] [UPLOAD_COMPLETED] Chat indexed successfully: 67 chunks
+[2025-08-14 20:15:37.181] [session_ff170fc1] [QUESTION_ASKED] User question: Show me messages about Eversource
+[2025-08-14 20:15:42.847] [current] [ANSWER_PROVIDED] Question answered: Show me messages about Eversource
+[2025-08-14 20:16:05.484] [session_ff170fc1] [QUESTION_ASKED] User question: Name the people in the group
+[2025-08-14 20:16:09.020] [current] [ANSWER_PROVIDED] Question answered: Name the people in the group
+[2025-08-14 20:16:49.881] [session_ff170fc1] [QUESTION_ASKED] User question: Who mentioned security deposit?
+[2025-08-14 20:16:54.097] [current] [ANSWER_PROVIDED] Question answered: Who mentioned security deposit?

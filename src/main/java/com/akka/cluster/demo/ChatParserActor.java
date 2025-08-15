@@ -112,7 +112,7 @@ public class ChatParserActor extends AbstractBehavior<ChatParserActor.Command> {
     // New pattern for 12-hour format with AM/PM: [7/1/25, 11:31:28 PM] Name: message
     // Note: Handles Unicode whitespace including thin spaces (U+202F)
     private static final Pattern WHATSAPP_PATTERN_4 = Pattern.compile(
-        "^\\[(\\d{1,2}/\\d{1,2}/\\d{2,4}),\\s+(\\d{1,2}:\\d{2}:\\d{2})[\\s\\u202F\\u2009\\u2000-\\u200A]+(AM|PM)\\]\\s+([^:]+):\\s(.*)$"
+        "^\\[(\\d{1,2}/\\d{1,2}/\\d{2,4}),\\s+(\\d{1,2}:\\d{2}:\\d{2})\\s+(AM|PM)\\]\\s+([^:]+):\\s(.*)$"
     );
 
     private ChatParserActor(ActorContext<Command> context) {
